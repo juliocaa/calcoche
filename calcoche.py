@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 
@@ -16,7 +15,7 @@ def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing
     
     return monthly_cost, total_cost
 
-st.title("Coste Coche eléctrico VS Combustión")
+st.title("Calculadora de coste de coche")
 
 # Datos sin valores predeterminados
 electric_purchase_price = st.number_input("Coste de adquisición del coche eléctrico", value=0)
@@ -31,6 +30,9 @@ with st.expander("Más opciones"):
     electric_consumption = st.number_input("Consumo eléctrico (kWh/100km)", value=17)
     gas_type = st.selectbox("Tipo de combustible", ("Gasolina", "Diésel"))
     combustion_consumption = st.number_input(f"Consumo de {gas_type} (l/100km)", value=7 if gas_type == "Gasolina" else 6)
+    gasoline_price = st.number_input("Precio de la gasolina (€/l)", value=1.7)
+    diesel_price = st.number_input("Precio del diésel (€/l)", value=1.5)
+    electricity_price = st.number_input("Precio de la electricidad (€/kWh)", value=0.15)
     financing = st.checkbox("Financiamiento")
     months = st.number_input("Meses de financiamiento", value=84)
     interest_rate = st.number_input("Tasa de interés (%)", value=6) / 100
@@ -38,7 +40,7 @@ with st.expander("Más opciones"):
     electric_maintenance = st.number_input("Coste de mantenimiento eléctrico/año", value=100)
     combustion_maintenance = st.number_input("Coste de mantenimiento de combustión/año", value=300)
 
-fuel_prices = {"Gasolina": 1.7, "Diésel": 1.5, "Electricidad": 0.15}
+fuel_prices = {"Gasolina": gasoline_price, "Diésel": diesel_price, "Electricidad": electricity_price}
     
 electric_monthly, electric_total = calculate_cost(
     electric_purchase_price, fuel_prices["Electricidad"], electric_consumption, electric_insurance,
