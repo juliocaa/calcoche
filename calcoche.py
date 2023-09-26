@@ -16,7 +16,7 @@ def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing
     
     return monthly_cost, total_cost
 
-st.title("Calculadora de coste de coche")
+st.title("Coste Coche eléctrico VS Combustión")
 
 # Datos sin valores predeterminados
 electric_purchase_price = st.number_input("Coste de adquisición del coche eléctrico", value=0)
