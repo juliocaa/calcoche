@@ -4,7 +4,7 @@ from PIL import Image
 
 # Carga y muestra el logotipo
 image = Image.open("mi_logotipo.png")
-st.image(image, caption="Tu empresa", use_column_width=True)
+st.image(image, caption="AUTOINGENIUM", use_column_width=True)
 
 def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing, months, interest_rate, annual_km, years, maintenance):
     if financing:
@@ -20,7 +20,7 @@ def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing
     
     return monthly_cost, total_cost
 
-st.title("Calculadora de coste de coche")
+st.title("Calculadora coste de coche eléctrico vs combustión")
 
 # Datos sin valores predeterminados
 electric_purchase_price = st.number_input("Coste de adquisición del coche eléctrico", value=0)
