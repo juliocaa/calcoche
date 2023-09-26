@@ -1,5 +1,10 @@
 import streamlit as st
 import pandas as pd
+from PIL import Image
+
+# Carga y muestra el logotipo
+image = Image.open("mi_logotipo.png")
+st.image(image, caption="Tu empresa", use_column_width=True)
 
 def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing, months, interest_rate, annual_km, years, maintenance):
     if financing:
