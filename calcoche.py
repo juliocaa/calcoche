@@ -40,7 +40,8 @@ with st.expander("Más opciones"):
     electricity_price = st.number_input("Precio de la electricidad (€/kWh)", value=0.15)
     financing = st.checkbox("Financiamiento")
     months = st.number_input("Meses de financiamiento", value=84)
-    interest_rate = st.number_input("Tasa de interés (%)", value=6) / 100
+    electric_interest_rate = st.number_input("Tasa de interés para el coche eléctrico (%)", value=6) / 100
+    combustion_interest_rate = st.number_input("Tasa de interés para el coche de combustión (%)", value=6) / 100
     annual_km = st.number_input("Kilómetros anuales", value=20000)
     electric_maintenance = st.number_input("Coste de mantenimiento eléctrico/año", value=100)
     combustion_maintenance = st.number_input("Coste de mantenimiento de combustión/año", value=300)
@@ -49,12 +50,12 @@ fuel_prices = {"Gasolina": gasoline_price, "Diésel": diesel_price, "Electricida
     
 electric_monthly, electric_total = calculate_cost(
     electric_purchase_price, fuel_prices["Electricidad"], electric_consumption, electric_insurance,
-    financing, months, interest_rate, annual_km, years, electric_maintenance
+    financing, months, electric_interest_rate, annual_km, years, electric_maintenance  # electric_interest_rate actualizado
 )
     
 combustion_monthly, combustion_total = calculate_cost(
     combustion_purchase_price, fuel_prices[gas_type], combustion_consumption, combustion_insurance,
-    financing, months, interest_rate, annual_km, years, combustion_maintenance
+    financing, months, combustion_interest_rate, annual_km, years, combustion_maintenance  # combustion_interest_rate actualizado
 )
 
 # Crear tabla de resultados
