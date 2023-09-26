@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 
@@ -52,8 +53,8 @@ combustion_monthly, combustion_total = calculate_cost(
 # Crear tabla de resultados
 df = pd.DataFrame({
     "Tipo": ["Eléctrico", "Combustión"],
-    "Coste mensual": [electric_monthly, combustion_monthly],
-    "Coste total": [electric_total, combustion_total]
+    "Coste mensual": [round(electric_monthly), round(combustion_monthly)],
+    "Coste total": [round(electric_total), round(combustion_total)]
 })
 
 st.table(df)
