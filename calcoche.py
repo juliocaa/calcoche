@@ -19,6 +19,9 @@ def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing
 
     fuel_cost = (annual_km / 100) * fuel_price * consumption
     total_cost = purchase_cost + (fuel_cost + insurance + maintenance) * years
+    # Restamos el incentivo del costo total
+    total_cost -= incentive
+
     monthly_cost = (monthly_payment * min(months, years * 12) + fuel_cost * years + insurance * years + maintenance * years) / (years * 12)
     
     return monthly_cost, total_cost
