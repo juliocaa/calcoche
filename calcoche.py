@@ -6,7 +6,7 @@ st.markdown("[Visita mi canal de YouTube](https://www.youtube.com/@AutoIngenium-
 
 # Carga y muestra el logotipo
 image = Image.open("mi_logotipo.png")
-st.image(image, caption="AUTOINGENIUM Vídeo tutorial: https://www.youtube.com/watch?v=gLxunTcgm1I", use_column_width=True)
+st.image(image, caption="AUTOINGENIUM", use_column_width=True)
 
 st.markdown("[VIDEO TUTORIAL](https://www.youtube.com/watch?v=gLxunTcgm1I)")
 
