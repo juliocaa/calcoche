@@ -8,6 +8,8 @@ st.markdown("[Visita mi canal de YouTube](https://www.youtube.com/@AutoIngenium-
 image = Image.open("mi_logotipo.png")
 st.image(image, caption="AUTOINGENIUM Instrucciones en https://www.youtube.com/watch?v=gLxunTcgm1I", use_column_width=True)
 
+st.markdown("[VIDEO TUTORIAL](https://www.youtube.com/watch?v=gLxunTcgm1I)")
+
 def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing, months, interest_rate, annual_km, years, maintenance, incentive=0):
     if financing:
         monthly_payment = (purchase_price * interest_rate / 12) / (1 - (1 + interest_rate / 12)**(-months))
