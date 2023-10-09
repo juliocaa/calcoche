@@ -4,7 +4,7 @@ from PIL import Image
 
 # Carga y muestra el logotipo
 image = Image.open("mi_logotipo.png")
-st.image(image, caption="AUTOINGENIUM", use_column_width=True)
+st.image(image, caption="AUTOINGENIUM Instrucciones en https://www.youtube.com/watch?v=dtC0a4OrGQQ", use_column_width=True)
 
 def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing, months, interest_rate, annual_km, years, maintenance, incentive=0):
     if financing:
