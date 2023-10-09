@@ -15,11 +15,11 @@ def calculate_cost(purchase_price, fuel_price, consumption, insurance, financing
     else:
         monthly_payment = 0
         # Restamos el incentivo del coste total de compra
-        purchase_cost = purchase_price - incentive
+        purchase_cost = purchase_price
 
     fuel_cost = (annual_km / 100) * fuel_price * consumption
     total_cost = purchase_cost + (fuel_cost + insurance + maintenance) * years
-    # Restamos el incentivo del costo total
+    # Restamos el incentivo del costo total solo una vez
     total_cost -= incentive
 
     monthly_cost = (monthly_payment * min(months, years * 12) + fuel_cost * years + insurance * years + maintenance * years) / (years * 12)
