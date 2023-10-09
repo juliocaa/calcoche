@@ -1,6 +1,9 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import streamlit as st
+
+st.markdown("[Visita mi canal de YouTube](https://www.youtube.com/@AutoIngenium-fj8ss)")
 
 # Carga y muestra el logotipo
 image = Image.open("mi_logotipo.png")
